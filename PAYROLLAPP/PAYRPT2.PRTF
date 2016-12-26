@@ -1,0 +1,48 @@
+000001160324     A          R TITLE
+000002160324     A                                  1  2DATE
+000003160324     A                                  1  9TIME
+000004160411     A            SHIFTTYPE     30      2 38
+000005160324     A                                  1 50'WEEKLY PAYROLL REPORT'
+000006160324     A                                  1 95PAGNBR
+000007160324     A                                  1 89'PAGE:'
+000008160324     A                                  2  2'NAME: OLEG MITRAKHOVICH'
+000009160412     A          R COLHDG                    SPACEB(1)
+000010160401     A                                     1'EMPLOYEE NUMBER :    '
+000011160324     A                                    23'WORK SHIFT:'
+000013160324     A                                    38'PAY GRADE:'
+000015160324     A                                    50'HOURLY RATE:'
+000017160324     A                                    64'HOURS WORKED:'
+000019160324     A                                    79'REGULAR PAY:'
+000021160324     A                                    93'OVERTIME PAY:'
+000023160324     A                                   110'TOTAL PAY:'
+000024160415     A                                      SPACEA(1)
+000026160412     A          R EMPDETAIL                 SPACEB(1)
+000027160324     A            EMPNUM    R              5REFFLD(ALLSHIFT/EMPNUM IBC233LIB/AL-
+000029160324     A                                      LSHIFTS)
+000030160412     A                                      SPACEB(0)
+000031160324     A                                      EDTWRD('0  -   -   ')
+000032160324     A            WORKSHIFT R    1A       27REFFLD(ALLSHIFT/WORKSHIFT +
+000033160324     A                                      IBC233LIB/ALLSHIFTS)
+000034160324     A            PAYGRADE  R             42REFFLD(ALLSHIFT/PAYGRADE +
+000035160324     A                                      IBC233LIB/ALLSHIFTS)
+000036160324     A            HOURLYRATE     5  2     52EDTCDE(2)
+000037160324     A            HRSWORKED R             68REFFLD(ALLSHIFT/HRSWORKED +
+000038160324     A                                      IBC233LIB/ALLSHIFTS)
+000039160324     A            REGULARPAY     7  2     80EDTCDE(2)
+000040160324     A            OVERPAY        7  2     95EDTCDE(2)
+000041160324     A            TOTALPAY       7  2    110EDTCDE(2)
+000043160412     A          R TOTALS                    SPACEB(3)
+000044160401     A                                    65'TOTALS:'
+000045160412     A            TOTREGPAY      9  2     77EDTCDE(1 $)
+000047160412     A            TOTOVTPAY      9  2     93EDTCDE(1 $)
+000049160412     A            TOTEMPPAY      9  2    108EDTCDE(1 $)
+000100      
+000101160324     A*%%RS+<record-sequences>
+000102160324     A*%%RS+ <sequence name="REPORT1">
+000103160324     A*%%RS+  <device type="printer" width="132" height="66" />
+000104160324     A*%%RS+  <record-write record-format="TITLE" />
+000105160324     A*%%RS+  <record-write record-format="COLHDG" />
+000106160324     A*%%RS+  <record-write record-format="EMPDETAIL" />
+000107160324     A*%%RS+  <record-write record-format="TOTALS" />
+000108160324     A*%%RS+ </sequence>
+000109160324     A*%%RS </record-sequences>

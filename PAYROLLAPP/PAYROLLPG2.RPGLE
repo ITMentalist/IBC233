@@ -1,0 +1,68 @@
+000100160330     FSHIFTRATESIF   E             DISK    RENAME(SHIFTRATES:SHIFTRATER)
+000101160330     FALLSHIFT  IF   E           K DISK    RENAME(ALLSHIFT:ALLSHIFTR)
+000102160411     FCONFIRMPY2CF   E             WORKSTN
+000103160411     FPAYRPT2   O    E             PRINTER OFLIND(*IN01)
+000104160330     DHOURSOVER        S              3  0
+000105160411     DMAIN             PR                  EXTPGM('PAYROLLPG2')
+000106160411     DSHIFTTYPE                      30
+000107160411     DMAIN             PI
+000108160411     DSHIFTTYPE                      30
+000109160330     F/FREE
+000110160330                READ SHIFTRATES;
+000111160330                WRITE TITLE;
+000112160330                WRITE COLHDG;
+000113160330                READ ALLSHIFT;
+000114160330                DOW NOT %EOF;
+000115160330                  EXSR PAYSR;
+000116160330                  IF *IN01;
+000117160330                          WRITE TITLE;
+000118160330                          WRITE COLHDG;
+000119160330                          *IN01 = *OFF;
+000120160330                  ENDIF;
+000121160330                  WRITE EMPDETAIL;
+000122160330                 READ ALLSHIFT;
+000123160330                ENDDO;
+000124160330                 TOTEMPPAY = TOTREGPAY + TOTOVTPAY;
+000125160330                 WRITE TOTALS;
+000126160330
+000127160330                 DAYR=DAYRATE;
+000128160330                 AFTERR=AFTNRATE;
+000129160330                 NIGHTR=NIGHTRATE;
+000130160330                 REGPAY=TOTREGPAY;
+000131160330                 OVTPAY=TOTOVTPAY;
+000132160330                 COMPAY=TOTEMPPAY;
+000133160330
+000134160330              EXFMT RECORD1;
+000135160330              *INLR = *ON;
+000136160330              RETURN;
+000137160330              BEGSR PAYSR;
+000138160330                         SELECT;
+000139160330                           WHEN WORKSHIFT = 'D';
+000140160330                             HOURLYRATE = DAYRATE;
+000141160330                           WHEN WORKSHIFT = 'N';
+000142160330                             HOURLYRATE = NIGHTRATE;
+000143160330                           WHEN WORKSHIFT = 'A';
+000144160330                             HOURLYRATE = AFTNRATE;
+000145160330                         ENDSL;
+000146160330
+000147160330                         SELECT;
+000148160330                           WHEN PAYGRADE = '1';
+000149160330                             EVAL(H) HOURLYRATE = HOURLYRATE*1.073;
+000150160330                           WHEN PAYGRADE = '2';
+000151160330                             EVAL(H) HOURLYRATE = HOURLYRATE*1.054;
+000152160330                           WHEN PAYGRADE = '3';
+000153160330                             EVAL(H) HOURLYRATE = HOURLYRATE-(HOURLYRATE*0.045);
+000154160330                          ENDSL;
+000155160330                         IF HRSWORKED >= 41;
+000156160330                           EVAL(H) REGULARPAY=40*HOURLYRATE;
+000157160330                           EVAL(H) OVERPAY=(HRSWORKED-40)*(HOURLYRATE*1.5);
+000158160330                         ENDIF;
+000159160330                         IF HRSWORKED <= 40;
+000160160330                           EVAL(H) REGULARPAY=HRSWORKED*HOURLYRATE;
+000161160330                           OVERPAY=0;
+000162160330                         ENDIF;
+000163160330                         TOTALPAY=REGULARPAY+OVERPAY;
+000164160330                         TOTREGPAY=TOTREGPAY+REGULARPAY;
+000165160330                         TOTOVTPAY=TOTOVTPAY+OVERPAY;
+000166160330              ENDSR;
+000167160330

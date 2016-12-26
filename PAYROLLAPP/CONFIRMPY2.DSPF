@@ -1,0 +1,20 @@
+000100160330     A          R RECORD1
+000101160330     A                                  2  4USER
+000102160330     A                                  3  4'OLEG MITRAKHOVICH'
+000103160330     A                                  2 31'PAYROLL PROGRAM COMPLETED'
+000104160330     A                                  2 70DATE
+000105160330     A                                  6 14'RATES:'
+000106160330     A                                 11 13'TOTALS:'
+000107160330     A                                  7 26'DAY RATE:'
+000108160330     A                                  8 26'AFTERNOON RATE:'
+000109160330     A                                  9 26'NIGHT RATE:'
+000110160330     A                                 12 26'REGULAR PAY:'
+000111160330     A                                 13 26'OVERTIME PAY:'
+000112160330     A                                 14 26'COMPANY PAYOUT:'
+000113160330     A            DAYR           5Y 2O  7 47EDTCDE(2)
+000114160330     A            AFTERR         5Y 2O  8 47EDTCDE(2)
+000115160330     A            NIGHTR         5Y 2O  9 47EDTCDE(2)
+000116160330     A            REGPAY         8Y 2O 12 47EDTCDE(2)
+000117160330     A            COMPAY         8Y 2O 14 46EDTCDE(2 $)
+000118160330     A            OVTPAY         8Y 2O 13 47EDTCDE(2)
+000119160411     A            SHIFTTYPE     30   O 10 24
