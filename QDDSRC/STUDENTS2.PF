@@ -1,0 +1,17 @@
+000100160306     A                                      UNIQUE
+000101160306     A          R STUDENTSR                 TEXT('STUDENTS REGISTER')
+000102160306     A            STUDENTNO      9S 0       COLHDG('STUDENT''NUMBER')
+000103160306     A                                      EDTWRD('0   -   -   ')
+000104160306     A            FIRSTNAME     15          COLHDG('FIRST NAME')
+000105160306     A            LASTNAME      20          COLHDG('LAST NAME')
+000106160306     A            BIRTHDATE       L
+000107160306     A            PHONE         10S 0       COLHDG('PHONE' 'NUMBER')
+000108160306     A                                      EDTWRD('0(   )   -    ')
+000109160306     A            ADDRESS       30          COLHDG('STREET' 'ADDRESS')
+000110160306     A            CITY          15
+000111160306     A            PROVINCE       2          COLHDG('PROV' 'CODE')
+000112160306     A
+000113160306     A            POSTALCODE     6          COLHDG('POSTAL' 'CODE')
+000114160306     A            FEESOWED       7P 2       COLHDG('FEES' 'OWED')
+000115160306     A            FINESOWED      7P 2       COLHDG('FINES' 'OWED')
+000116160306     A          K STUDENTNO

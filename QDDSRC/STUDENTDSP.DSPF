@@ -1,0 +1,45 @@
+000001160317     A          R RECORD1                   CA03(03 'EXIT')
+000002160317     A                                  2  4'DW233A20'
+000003160317     A                                  2 30'STUDENT INFORMATION'
+000004160317     A                                  2 72DATE
+000011160317     A                                  4 10'STUDENT NUMBER:'
+000012160317     A                                  5 20'NAME:'
+000015160317     A                                  6 13'BIRTH DATE: '
+000016160317     A                                  7 16'ADDRESS:'
+000025160317     A                                 10 14'FINES OWED:'
+000030160317     A                                 11 15'FEES OWED:'
+000031160317     A            STUDENTNO R        O  4 33REFFLD(STUDENTSR/STUDENTNO +
+000032160317     A                                      DW233A20/STUDENTS2)
+000033160317     A            FIRSTNAME R        O  5 33REFFLD(STUDENTSR/FIRSTNAME +
+000034160317     A                                      DW233A20/STUDENTS2)
+000035160317     A            LASTNAME  R        O  5 49REFFLD(STUDENTSR/LASTNAME +
+000036160317     A                                      DW233A20/STUDENTS2)
+000037160317     A            BIRTHDATE R        O  6 33REFFLD(STUDENTSR/BIRTHDATE +
+000038160317     A                                      DW233A20/STUDENTS2)
+000039160317     A            ADDRESS   R        O  7 33REFFLD(STUDENTSR/ADDRESS +
+000040160317     A                                      DW233A20/STUDENTS2)
+000041160317     A            CITY      R        O  8 33REFFLD(STUDENTSR/CITY DW233A20/STUD-
+000042160317     A                                      ENTS2)
+000043160317     A            PROVINCE  R        O  9 33REFFLD(STUDENTSR/PROVINCE +
+000044160317     A                                      DW233A20/STUDENTS2)
+000047160317     A            FEESOWED  R        O 11 33REFFLD(STUDENTR/FEESOWED +
+000048160317     A                                      IBC233LIB/STUDENTS2)
+000049160317     A                                      EDTCDE(1)
+000050160317     A  40                                  DSPATR(RI)
+000051160317     A            FINESOWED R        O 10 33REFFLD(STUDENTR/FINESOWED +
+000052160317     A                                      IBC233LIB/STUDENTS2)
+000053160317     A                                      EDTCDE(1)
+000054160317     A  41                                  DSPATR(RI)
+000055160317     A                                 13 30'F3 - EXIT'
+000100160317     A          R RECORD2
+000101160317     A                                  2 31'STUDENT SUMMARY'
+000102160317     A                                  6 13'FINES OWED:'
+000103160317     A                                  7 14'FESS OWED:'
+000104160317     A                                  4  9'TOTAL STUDENTS:'
+000105160317     A                                  9 12'TOTAL OWING:'
+000107160317     A                                  2  7'OLEG MITRAKHOVICH'
+000108160317     A            FINESTOTAL     6  2O  6 27EDTCDE(1 $)
+000109160317     A            FEESTOTAL      6  2O  7 27EDTCDE(1 $)
+000110160317     A            TOTAL          6  2O  9 27EDTCDE(1 $)
+000111160317     A            TOTSTUD        3  0O  4 27EDTCDE(1)
+000112160317     A                                  2 51DATE

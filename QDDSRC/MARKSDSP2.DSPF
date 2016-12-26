@@ -1,0 +1,53 @@
+000100160310     A          R RECORD1
+000101160310     A                                  2 71DATE
+000103160310     A                                  3 71TIME
+000104160310     A                                  2 30'MARKS CALCULATOR'
+000105160310     A                                  4 22'TEST 1:'
+000106160310     A                                  5 22'TEST 2:'
+000107160310     A                                  6 22'TEST 3:'
+000108160310     A                                  7 22'LABS:'
+000109160310     A                                  8 22'EXAM:'
+000110160310     A            TEST1          3  0B  4 30RANGE(0 100)
+000111160310     A  40                                  DSPATR(PR)
+000112160310     A            TEST2          3  0B  5 30RANGE(0 100)
+000113160310     A  40                                  DSPATR(PR)
+000114160310     A            TEST3          3  0B  6 30RANGE(0 100)
+000115160310     A  40                                  DSPATR(PR)
+000116160310     A            LABS           2  0B  7 31RANGE(0 30)
+000117160310     A  40                                  DSPATR(PR)
+000118160310     A            EXAM           3  0B  8 30RANGE(0 100)
+000119160310     A  40                                  DSPATR(PR)
+000120160310     A                                  2  2USER
+000121160310     A                                  3  4SYSNAME
+000122160310     A  21                              4 36'THIS TEST MARK IS DROPPED'
+000123160310     A  22                                  DSPATR(PC)
+000124160310     A  22                              5 36'THIS TEST MARK IS DROPPED'
+000125160310     A  23                                  DSPATR(PC)
+000126160310     A  23                              6 36'THIS TEST MARK IS DROPPED'
+000127160310     A  41                              8 36'F WITH EXAM MARK BELOW 50'
+000129160310     A  41                                  DSPATR(PC)
+000131160310     A          R RECORD2                   CA03(03 'Exit')
+000132160310     A                                      OVERLAY
+000133160310     A                                  9 22'TESTS:'
+000134160310     A                                 11 17'FINAL MARK:'
+000135160310     A                                 13 16'FINAL GRADE:'
+000136160310     A                                 15 19'F3- EXIT'
+000137160310     A            TESTOVRALL     3  0O  9 30EDTCDE(A)
+000138160310     A            NUMGRADE       3  0O 11 30EDTCDE(A)
+000139160310     A            LETGRADE       2   O 13 30
+000140160310     A  60                                  DSPATR(PC)
+000142160310     A  60                              9 36'F WITH TEST AVERAGE BELOW 50'
+000144160311     A          R RECORD3                   CA03(03 'Exit')
+000145160311     A                                      OVERLAY
+000146160311     A                                  1 34'MARK STATISTICS'
+000147160311     A                                  1 71DATE
+000149160311     A                                  2 71TIME
+000150160311     A                                  1  3'OLEG MITRAKHOVICH'
+000151160311     A                                  3 35'PASS:'
+000152160311     A                                  5 35'FAIL:'
+000153160311     A                                  7 21'TOTAL MARK QUERIES:'
+000154160311     A                                  9 26'AVERAGE GRADE:'
+000155160311     A            PASS           3  0O  3 44
+000156160311     A            AVERAGE        3  0O  9 44EDTCDE(A)
+000157160311     A            FAIL           3  0O  5 44EDTCDE(A)
+000158160311     A            QUERIES        3  0O  7 44EDTCDE(A)
