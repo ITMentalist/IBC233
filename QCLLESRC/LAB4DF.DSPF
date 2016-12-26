@@ -1,0 +1,33 @@
+000001160210     A          R RECORD1                   CA03(03 'EXIT')
+000002160210     A                                      CF21(03 'COMMAND')
+000003160210     A                                  2  4'OLEG MITRAKHOVICH'
+000004160210     A                                  2 37'LAB 4'
+000005160210     A                                  2 69TIME
+000006160210     A                                  1 69DATE
+000007160210     A                                  4  9'PLEASE SELECT ONE OF THE FOLLOWING-
+000008160210     A                                       OPTIONS:              '
+000009160210     A                                  5 22'1. CURRENCY SYMBOL USED BY THIS SY-
+000010160210     A                                      STEM                  '
+000011160210     A                                  6 22'2. IPL TYPE (INITIAL PROGRAM LOAD -
+000012160210     A                                      FOR SYTEM REBOOT)'
+000013160210     A                                  7 22'3. SIGNED ON USER''S MESSAGE QUEUE-
+000014160210     A                                                                         -
+000015160210     A                                        '
+000016160210     A                                  8 22'4. INITIAL NUMBER OF ACTIVE JOBS F-
+000017160210     A                                      OR STORAGE ALLOCATION              -
+000018160210     A                                                '
+000019160210     A                                  9 22'5. DISPLAY SYSTEM SERIAL NUMBER   -
+000020160210     A                                                                         -
+000021160210     A                                       '
+000022160210     A                                 10 22'6. MAXIMUM PASSWORD LENGTH'
+000023160210     A                                 11 22'7. PREVIOUS SIGN ON BY SIGNED ON U-
+000024160210     A                                      SER'
+000025160210     A                                 14 45'F3 - EXIT'
+000026160210     A                                 13 45'F21 - COMMAND LINE'
+000027160210     A                                 12 29'OPTION:'
+000028160210     A            INPUT          2   B 12 38RANGE(1 6)
+000029160210     A  30                                  DSPATR(RI)
+000030160210     A  30                                  DSPATR(PC)
+000031160210     A  30                             12 45'*OPTION ENTERED MUST BE VALID'
+000032160210     A            OUTPUT        70   O 15  6
+000100

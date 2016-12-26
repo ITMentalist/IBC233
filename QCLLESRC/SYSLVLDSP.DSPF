@@ -1,0 +1,19 @@
+000004160318     A          R RECORD2                   CA03(03 'EXIT')
+000005160318     A                                      OVERLAY
+000006160318     A                                  4 30'OLEG MITRAKHOVICH'
+000007160318     A                                  2 30'COMMAND BY:'
+000008160318     A          R RECORD1                   CA03(03 'EXIT')
+000009160318     A                                      CA04(04 'RECORD2')
+000010160316     A                                      OVERLAY
+000011160316     A                                  2 31'DISPLAY SYSTEM LEVEL'
+000012160316     A                                  2  3USER
+000013160316     A                                  2 72SYSNAME
+000014160316     A                                  5 26'VERSION:'
+000015160316     A                                  9 21'MODIFICATION:'
+000016160316     A                                  7 26'RELEASE:'
+000017160316     A            SYSLVLR        2N 0O  7 38
+000018160316     A            SYSLVLV        2N 0O  5 38
+000019160316     A            SYSLVLM        2N 0O  9 38
+000020160316     A                                  3  4'OLEG MITRAKHOVICH'
+000021160316
+000100      
