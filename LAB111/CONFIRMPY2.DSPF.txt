@@ -1,0 +1,20 @@
+     A          R RECORD1
+     A                                  2  4USER
+     A                                  3  4'OLEG MITRAKHOVICH'
+     A                                  2 31'PAYROLL PROGRAM COMPLETED'
+     A                                  2 70DATE
+     A                                  6 14'RATES:'
+     A                                 11 13'TOTALS:'
+     A                                  7 26'DAY RATE:'
+     A                                  8 26'AFTERNOON RATE:'
+     A                                  9 26'NIGHT RATE:'
+     A                                 12 26'REGULAR PAY:'
+     A                                 13 26'OVERTIME PAY:'
+     A                                 14 26'COMPANY PAYOUT:'
+     A            DAYR           5Y 2O  7 47EDTCDE(2)
+     A            AFTERR         5Y 2O  8 47EDTCDE(2)
+     A            NIGHTR         5Y 2O  9 47EDTCDE(2)
+     A            REGPAY         8Y 2O 12 47EDTCDE(2)
+     A            COMPAY         8Y 2O 14 46EDTCDE(2 $)
+     A            OVTPAY         8Y 2O 13 47EDTCDE(2)
+     A            SHIFTTYPE     30   O 10 24                  

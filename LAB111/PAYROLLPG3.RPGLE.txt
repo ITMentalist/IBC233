@@ -1,0 +1,67 @@
+ FSHIFTRATESIF   E             DISK    RENAME(SHIFTRATES:SHIFTRATER)
+     FALLSHIFT  IF   E           K DISK    RENAME(ALLSHIFT:ALLSHIFTR)
+     FCONFIRMPY2CF   E             WORKSTN
+     FPAYRPT2   O    E             PRINTER OFLIND(*IN01)
+     DHOURSOVER        S              3  0
+     DMAIN             PR                  EXTPGM('PAYROLLPG2')
+     DSHIFTTYPE                      30
+     DMAIN             PI
+     DSHIFTTYPE                      30
+     F/FREE
+                READ SHIFTRATES;
+                WRITE TITLE;
+                WRITE COLHDG;
+                READ ALLSHIFT;
+                DOW NOT %EOF;
+                  EXSR PAYSR;
+                  IF *IN01;
+                          WRITE TITLE;
+                          WRITE COLHDG;
+                          *IN01 = *OFF;
+                  ENDIF;
+                  WRITE EMPDETAIL;
+                 READ ALLSHIFT;
+                ENDDO;
+                 TOTEMPPAY = TOTREGPAY + TOTOVTPAY;
+                 WRITE TOTALS;
+
+                 DAYR=DAYRATE;
+                 AFTERR=AFTNRATE;
+                 NIGHTR=NIGHTRATE;
+                 REGPAY=TOTREGPAY;
+                 OVTPAY=TOTOVTPAY;
+                 COMPAY=TOTEMPPAY;
+
+              EXFMT RECORD1;
+              *INLR = *ON;
+              RETURN;
+              BEGSR PAYSR;
+                         SELECT;
+                           WHEN WORKSHIFT = 'D';
+                             HOURLYRATE = DAYRATE;
+                           WHEN WORKSHIFT = 'N';
+                             HOURLYRATE = NIGHTRATE;
+                           WHEN WORKSHIFT = 'A';
+                             HOURLYRATE = AFTNRATE;
+                         ENDSL;
+
+                         SELECT;
+                           WHEN PAYGRADE = '1';
+                             EVAL(H) HOURLYRATE = HOURLYRATE*1.073;
+                           WHEN PAYGRADE = '2';
+                             EVAL(H) HOURLYRATE = HOURLYRATE*1.054;
+                           WHEN PAYGRADE = '3';
+                             EVAL(H) HOURLYRATE = HOURLYRATE-(HOURLYRATE*0.045);
+                          ENDSL;
+                         IF HRSWORKED >= 41;
+                           EVAL(H) REGULARPAY=40*HOURLYRATE;
+                           EVAL(H) OVERPAY=(HRSWORKED-40)*(HOURLYRATE*1.5);
+                         ENDIF;
+                         IF HRSWORKED <= 40;
+                           EVAL(H) REGULARPAY=HRSWORKED*HOURLYRATE;
+                           OVERPAY=0;
+                         ENDIF;
+                         TOTALPAY=REGULARPAY+OVERPAY;
+                         TOTREGPAY=TOTREGPAY+REGULARPAY;
+                         TOTOVTPAY=TOTOVTPAY+OVERPAY;
+              ENDSR;                                                       

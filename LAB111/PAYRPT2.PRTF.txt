@@ -1,0 +1,38 @@
+ A          R TITLE
+     A                                  1  2DATE
+     A                                  1  9TIME
+     A            SHIFTTYPE     30      2 38
+     A                                  1 50'WEEKLY PAYROLL REPORT'
+     A                                  1 95PAGNBR
+     A                                  1 89'PAGE:'
+     A                                  2  2'NAME: OLEG MITRAKHOVICH'
+     A          R COLHDG                    SPACEB(1)
+     A                                     1'EMPLOYEE NUMBER :    '
+     A                                    23'WORK SHIFT:'
+     A                                    38'PAY GRADE:'
+     A                                    50'HOURLY RATE:'
+     A                                    64'HOURS WORKED:'
+     A                                    79'REGULAR PAY:'
+     A                                    93'OVERTIME PAY:'
+     A                                   110'TOTAL PAY:'
+     A                                      SPACEA(1)
+     A          R EMPDETAIL                 SPACEB(1)
+     A            EMPNUM    R              5REFFLD(ALLSHIFT/EMPNUM IBC233LIB/AL-
+     A                                      LSHIFTS)
+     A                                      SPACEB(0)
+     A                                      EDTWRD('0  -   -   ')
+     A            WORKSHIFT R    1A       27REFFLD(ALLSHIFT/WORKSHIFT +
+     A                                      IBC233LIB/ALLSHIFTS)
+     A            PAYGRADE  R             42REFFLD(ALLSHIFT/PAYGRADE +
+     A                                      IBC233LIB/ALLSHIFTS)
+     A            HOURLYRATE     5  2     52EDTCDE(2)
+     A            HRSWORKED R             68REFFLD(ALLSHIFT/HRSWORKED +
+     A                                      IBC233LIB/ALLSHIFTS)
+     A            REGULARPAY     7  2     80EDTCDE(2)
+     A            OVERPAY        7  2     95EDTCDE(2)
+     A            TOTALPAY       7  2    110EDTCDE(2)
+     A          R TOTALS                    SPACEB(3)
+     A                                    65'TOTALS:'
+     A            TOTREGPAY      9  2     77EDTCDE(1 $)
+     A            TOTOVTPAY      9  2     93EDTCDE(1 $)
+     A            TOTEMPPAY      9  2    108EDTCDE(1 $)                               
